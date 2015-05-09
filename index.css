@@ -1,0 +1,228 @@
+@import "@getable/variables";
+
+:root {
+  --input-field-line-height: 2.4em;
+  --input-field-vertical-padding: .5em;
+  --input-field-height: calc(var(--input-field-line-height) + (var(--input-field-vertical-padding) * 2));
+  --input-field-background-color: #ffffff;
+  --input-field-pop-color: #eee;
+  --input-field-border-color: var(--color-grey30, #bababa);
+  --input-field-border-radius: var(--border-radius, 3px);
+  --input-field-label-color: var(--color-black10);
+  --input-field-icon-bump: .3em;
+  --input-field-focus-color: var(--color-new, #7ed321);
+  --input-field-error-color: var(--color-warning, #EE7000);
+  --input-field-margin-bottom: 2em;
+}
+
+input:invalid {
+  border-color: #ccc !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  color: var(--color-black10) !important;
+}
+
+/* fred doesn't like the spinners, so kill 'em */
+input ::-webkit-outer-spin-button
+, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.input-field {
+  display: table;
+  position: relative;
+  width: 100%;
+  /* give a lot of space bettween inputs */
+  margin-bottom: var(--input-field-margin-bottom);
+  cursor: pointer;
+}
+
+
+/* fieldsets are useful for grouping radio and checkboxes, and should look like regular labels */
+fieldset.input-field {
+  border: none;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  cursor: default;
+}
+
+/* the last input doesn't need so much space */
+.input-field:last-of-type {
+  margin-bottom: 2em;
+}
+
+/* useful if for keeping spacing of parents of inputs with siblings of input fields consistent */
+.input-field-group {
+  margin-bottom: var(--input-field-margin-bottom);
+}
+
+.input-field-label {
+  margin-bottom: var(--input-field-vertical-padding);
+  font-weight: 600;
+  color: var(--input-field-label-color);
+  display: table-caption;
+}
+
+/* reset the bootstrap styles for legends */
+legend.input-field-label {
+  font-size: 1rem;
+  line-height: 1;
+  border-bottom: none;
+}
+
+.input-field input
+, .input-field textarea {
+  box-sizing: border-box;
+  display: table-cell;
+  padding: var(--input-field-vertical-padding);
+  margin: 0;
+  width: 100%;
+
+  -webkit-appearance: none;
+  appearance: none;
+
+  font-size: 1em;
+
+  border: 1px solid var(--input-field-border-color);
+  background-color: var(--input-field-background-color);
+
+  border-radius: var(--input-field-border-radius);
+  box-shadow: 0 1px 1px 0 #fff, inset 0 4px 3px -4px rgba(0,0,0,0.2);
+}
+
+.input-field.filled input
+, .input-field.filled textarea {
+  background: #FFFFFF;
+}
+
+.input-field input {
+  line-height: var(--input-field-line-height);
+}
+.input-field input[disabled] {
+  background: var(--color-white30);
+  box-shadow: none;
+  color: var(--color-grey50);
+  cursor: not-allowed;
+}
+.input-field input:focus{
+  background: #FFFFFF;
+}
+
+/* addons */
+.input-field-addon {
+  box-sizing: border-box;
+  display: table-cell;
+  padding: 0 calc(var(--input-field-vertical-padding) * 2);
+  width: var(--input-field-height);
+
+  background-color: var(--input-field-background-color);
+  line-height: var(--input-field-line-height);
+  font-size: 1em;
+
+  vertical-align: middle;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: inset 0 3px 3px -3px #ccc;
+}
+
+i.input-field-addon {
+  /* center the icons a bit more */
+  padding-top: var(--input-field-icon-bump);
+  line-height: calc(var(--input-field-line-height) - var(--input-field-icon-bump));
+}
+
+/* after addons*/
+input + .input-field-addon
+/* before addons */
+, .input-field-label + .input-field-addon {
+  border: 1px solid var(--input-field-border-color);
+
+  border-radius: var(--input-field-border-radius);
+}
+
+/* before addon */
+.input-field-label + .input-field-addon {
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-field-addon + input {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* after addon */
+input + .input-field-addon {
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-field input:not(:last-child) {
+  border-right: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* make the addon "pop" */
+.input-field .input-field-addon-pop {
+  background-color: var(--input-field-pop-color);
+  border: 1px solid var(--input-field-border-color);
+}
+
+.input-field i.input-field-addon-pop {
+  color: var(--input-field-label-color);
+}
+
+/* large addons */
+.input-field .input-field-addon-lg {
+  width: 2.5em;
+  padding-right: 0;
+  padding-left: 0;
+
+  font-size: 1.5em;
+  line-height: calc(var(--input-field-line-height) - (var(--input-field-icon-bump) * 1.5));
+}
+
+/* focus styling */
+.input-field input:focus
+, .input-field textarea:focus {
+  /*box-shadow: inset 0 0 0 1px var(--input-field-focus-color, #7ed321);*/
+  /*box-shadow: 0 1px 1px 0 #fff, inset 0 4px 3px -4px #7ed321;*/
+  /* TODO: a better focus state that takes the addons into account */
+  box-shadow: none;
+  border: 1px solid var(--input-field-focus-color, #7ed321);
+  outline: none;
+}
+
+/* error styling */
+.input-field-label-empty {
+  display: none;
+}
+
+.input-field[data-error]:before
+, .input-field-dropdown[data-error]:before {
+  content: "\e103\0020" attr(data-error);
+  font-family: "Elusive-Icons";
+  position: absolute;
+  width: 100%;
+  top: 0;
+  /* bump it in from the side just a bit */
+  right: .1em;
+  color: var(--input-field-error-color);
+}
+
+.input-field[data-error] .input-field-label
+, .input-field-dropdown[data-error] .input-field-label {
+  visibility: hidden;
+}
+
+.input-field[data-error] .input-field-label-empty {
+  display: table-caption;
+}
