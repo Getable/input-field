@@ -1,5 +1,8 @@
 # Changelog
 
+## v2.0.2 | 2015-05-12
+* fix: css
+
 ## v2.0.0 | 2015-05-11
 * add: input can now receive all props
 * fix: install missing dep
@@ -18,6 +21,7 @@ inital version
 
 ### 0.0.0
 Init
+
 
 
 
