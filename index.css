@@ -172,8 +172,6 @@ input + .input-addon {
 /* make the addon "pop" */
 .input .input-addon-pop {
   background-color: var(--color-input-pop);
-}
-
   color: var(--color-input-label);
 }
 
