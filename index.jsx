@@ -1,5 +1,6 @@
 import React, {PropTypes, Component} from 'react'
 import {addons} from 'react/addons'
+import omit from 'lodash/object/omit'
 const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'input'
 
@@ -11,12 +12,13 @@ export default class InputField extends Component {
   }
 
   render () {
+    const inputProps = omit(this.props, 'label')
     //todo: setup a classNames for each input type.
     //let typeClass = this.props.typeClass || ''
     return (
       <label className={namespace}>
         <span className={`${namespace}-label`}>{this.props.label}</span>
-        <input name={this.props.name} type={this.props.type}></input>
+        <input {...inputProps} />
       </label>
     )
   }
@@ -24,6 +26,6 @@ export default class InputField extends Component {
 
 InputField.propTypes = {
   type: PropTypes.string.isRequired
-, label: PropTypes.string
-, name: PropTypes.string
+  , label: PropTypes.string
+  , name: PropTypes.string
 }
