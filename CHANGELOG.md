@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0 | 2015-05-11
+* add: input can now receive all props
+* fix: install missing dep
+* fix: css namespacing now follow styleguide
+* dev: better default data
+
 ## v0.0.3 | 2015-05-11
 
 
@@ -11,6 +17,7 @@ inital version
 
 ### 0.0.0
 Init
+
 
 
 
