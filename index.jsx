@@ -1,7 +1,7 @@
 import React, {PropTypes, Component} from 'react'
 import {addons} from 'react/addons'
 const {shouldComponentUpdate} = addons.PureRenderMixin
-const namespace = 'input-field'
+const namespace = 'input'
 
 export default class InputField extends Component {
   // use the pure-render mixin without the mixin. This allows us to use es6

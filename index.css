@@ -1,21 +1,21 @@
 @import "@getable/variables";
 
 :root {
-  --input-field-line-height: 2.4em;
-  --input-field-vertical-padding: .5em;
-  --input-field-height: calc(var(--input-field-line-height) + (var(--input-field-vertical-padding) * 2));
-  --input-field-background-color: #ffffff;
-  --input-field-pop-color: #eee;
-  --input-field-border-color: var(--color-grey30, #bababa);
-  --input-field-border-radius: var(--border-radius, 3px);
-  --input-field-label-color: var(--color-black10);
-  --input-field-icon-bump: .3em;
-  --input-field-focus-color: var(--color-new, #7ed321);
-  --input-field-error-color: var(--color-warning, #EE7000);
-  --input-field-margin-bottom: 2em;
+  --lineHeight-input: 2.4em;
+  --verticalPadding-input: var(--padding-small);
+  --height-input: calc(var(--lineHeight-input) + (var(--verticalPadding-input) * 2));
+  --backgroundColor-input: #ffffff;
+  --color-input-pop: #eee;
+  --color-input-label: var(--color-black10);
+  --lineHeight-input-bump: .3em;
+  --color-input-focus: var(--color-new, #7ed321);
+  --marginBottom-input: var(--padding-large);
+  --color-input-border: var(--color-grey30);
+  --borderRadius-input: 3px;
+  --color-input-error: var(--color-warning);
 }
 
-input:invalid {
+.input input:invalid {
   border-color: #ccc !important;
   box-shadow: none !important;
   -webkit-box-shadow: none !important;
@@ -23,26 +23,25 @@ input:invalid {
 }
 
 /* fred doesn't like the spinners, so kill 'em */
-input ::-webkit-outer-spin-button
-, input::-webkit-inner-spin-button {
+.input input ::-webkit-outer-spin-button
+, .input input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   margin: 0;
 }
 
-.input-field {
+.input {
   display: table;
   position: relative;
   width: 100%;
   /* give a lot of space bettween inputs */
-  margin-bottom: var(--input-field-margin-bottom);
+  margin-bottom: var(--marginBottom-input);
   cursor: pointer;
 }
 
-
 /* fieldsets are useful for grouping radio and checkboxes, and should look like regular labels */
-fieldset.input-field {
+fieldset.input {
   border: none;
   padding: 0;
   margin-left: 0;
@@ -51,34 +50,34 @@ fieldset.input-field {
 }
 
 /* the last input doesn't need so much space */
-.input-field:last-of-type {
+.input:last-of-type {
   margin-bottom: 2em;
 }
 
 /* useful if for keeping spacing of parents of inputs with siblings of input fields consistent */
-.input-field-group {
-  margin-bottom: var(--input-field-margin-bottom);
+.input-group {
+  margin-bottom: var(--marginBottom-input);
 }
 
-.input-field-label {
-  margin-bottom: var(--input-field-vertical-padding);
+.input-label {
+  margin-bottom: var(--verticalPadding-input);
   font-weight: 600;
-  color: var(--input-field-label-color);
+  color: var(--color-input-label);
   display: table-caption;
 }
 
 /* reset the bootstrap styles for legends */
-legend.input-field-label {
+legend.input-label {
   font-size: 1rem;
   line-height: 1;
   border-bottom: none;
 }
 
-.input-field input
-, .input-field textarea {
+.input input
+, .input textarea {
   box-sizing: border-box;
   display: table-cell;
-  padding: var(--input-field-vertical-padding);
+  padding: var(--verticalPadding-input);
   margin: 0;
   width: 100%;
 
@@ -87,40 +86,40 @@ legend.input-field-label {
 
   font-size: 1em;
 
-  border: 1px solid var(--input-field-border-color);
-  background-color: var(--input-field-background-color);
+  border: 1px solid var(--color-input-border);
+  background-color: var(--backgroundColor-input);
 
-  border-radius: var(--input-field-border-radius);
+  border-radius: var(--borderRadius-input);
   box-shadow: 0 1px 1px 0 #fff, inset 0 4px 3px -4px rgba(0,0,0,0.2);
 }
 
-.input-field.filled input
-, .input-field.filled textarea {
+.input.filled input
+, .input.filled textarea {
   background: #FFFFFF;
 }
 
-.input-field input {
-  line-height: var(--input-field-line-height);
+.input input {
+  line-height: var(--lineHeight-input);
 }
-.input-field input[disabled] {
+.input input[disabled] {
   background: var(--color-white30);
   box-shadow: none;
   color: var(--color-grey50);
   cursor: not-allowed;
 }
-.input-field input:focus{
+.input input:focus{
   background: #FFFFFF;
 }
 
 /* addons */
-.input-field-addon {
+.input-addon {
   box-sizing: border-box;
   display: table-cell;
-  padding: 0 calc(var(--input-field-vertical-padding) * 2);
-  width: var(--input-field-height);
+  padding: 0 calc(var(--verticalPadding-input) * 2);
+  width: var(--height-input);
 
-  background-color: var(--input-field-background-color);
-  line-height: var(--input-field-line-height);
+  background-color: var(--backgroundColor-input);
+  line-height: var(--lineHeight-input);
   font-size: 1em;
 
   vertical-align: middle;
@@ -129,85 +128,79 @@ legend.input-field-label {
   box-shadow: inset 0 3px 3px -3px #ccc;
 }
 
-i.input-field-addon {
+i.input-addon {
   /* center the icons a bit more */
-  padding-top: var(--input-field-icon-bump);
-  line-height: calc(var(--input-field-line-height) - var(--input-field-icon-bump));
+  padding-top: var(--lineHeight-input);
+  line-height: calc(var(--lineHeight-input) - var(--lineHeight-input-bump));
 }
 
 /* after addons*/
-input + .input-field-addon
+input + .input-addon
 /* before addons */
-, .input-field-label + .input-field-addon {
-  border: 1px solid var(--input-field-border-color);
+, .input-label + .input-addon {
+  border: 1px solid var(--color-input-border);
 
-  border-radius: var(--input-field-border-radius);
+  border-radius: var(--borderRadius-input);
 }
 
 /* before addon */
-.input-field-label + .input-field-addon {
+.input-label + .input-addon {
   border-right: none;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.input-field-addon + input {
+.input-addon + input {
   border-left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
 /* after addon */
-input + .input-field-addon {
+input + .input-addon {
   border-left: none;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.input-field input:not(:last-child) {
+.input input:not(:last-child) {
   border-right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 /* make the addon "pop" */
-.input-field .input-field-addon-pop {
-  background-color: var(--input-field-pop-color);
-  border: 1px solid var(--input-field-border-color);
+.input .input-addon-pop {
+  background-color: var(--color-input-pop);
 }
 
-.input-field i.input-field-addon-pop {
-  color: var(--input-field-label-color);
+  color: var(--color-input-label);
 }
 
 /* large addons */
-.input-field .input-field-addon-lg {
+.input .input-addon-lg {
   width: 2.5em;
   padding-right: 0;
   padding-left: 0;
 
   font-size: 1.5em;
-  line-height: calc(var(--input-field-line-height) - (var(--input-field-icon-bump) * 1.5));
+  line-height: calc(var(--lineHeight-input) - (var(--lineHeight-input-bump) * 1.5));
 }
 
 /* focus styling */
-.input-field input:focus
-, .input-field textarea:focus {
-  /*box-shadow: inset 0 0 0 1px var(--input-field-focus-color, #7ed321);*/
-  /*box-shadow: 0 1px 1px 0 #fff, inset 0 4px 3px -4px #7ed321;*/
-  /* TODO: a better focus state that takes the addons into account */
+.input input:focus
+, .input textarea:focus {
+  /*box-shadow: inset 0 0 0 1px var(--color-input-focus, #7ed321);*/
   box-shadow: none;
-  border: 1px solid var(--input-field-focus-color, #7ed321);
   outline: none;
 }
-
 /* error styling */
-.input-field-label-empty {
+.input-label-empty {
   display: none;
 }
 
-.input-field[data-error]:before
-, .input-field-dropdown[data-error]:before {
+.input[data-error]:before
+, .input-dropdown[data-error]:before {
   content: "\e103\0020" attr(data-error);
   font-family: "Elusive-Icons";
   position: absolute;
@@ -215,14 +208,14 @@ input + .input-field-addon {
   top: 0;
   /* bump it in from the side just a bit */
   right: .1em;
-  color: var(--input-field-error-color);
+  color: var(--color-input-error);
 }
 
-.input-field[data-error] .input-field-label
-, .input-field-dropdown[data-error] .input-field-label {
+.input[data-error] .input-label
+, .input-dropdown[data-error] .input-label {
   visibility: hidden;
 }
 
-.input-field[data-error] .input-field-label-empty {
+.input[data-error] .input-label-empty {
   display: table-caption;
 }
