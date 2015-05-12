@@ -46,7 +46,7 @@
   "main": "index.es5",
   "browser": "index.es5",
   "devDependencies": {
-    "babel": "^5.2.9",
+    "babel": "^5.2.17",
     "babelify": "^6.0.2",
     "browserify": "^9.0.8",
     "dmn": "^1.0.5",
@@ -56,13 +56,13 @@
     "ghooks": "^0.3.2",
     "in-publish": "^1.1.1",
     "nsp": "^1.0.1",
+    "react": "^0.13.2",
     "sinon": "^1.12.2",
     "smokestack": "^3.2.0",
     "smokestack-watch": "^0.4.1",
     "tap-closer": "^1.0.0",
     "tap-spec": "^3.0.0",
-    "tape": "^4.0.0",
-    "react": "^0.13.2"
+    "tape": "^4.0.0"
   },
   "peerDependencies": {
     "react": "^0.13.2"
