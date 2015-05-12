@@ -14,8 +14,8 @@ export default class InputField extends Component {
     //todo: setup a classNames for each input type.
     //let typeClass = this.props.typeClass || ''
     return (
-      <label className='input-field'>
-        <span className='input-field-label'>{this.props.label}</span>
+      <label className={namespace}>
+        <span className={`${namespace}-label`}>{this.props.label}</span>
         <input name={this.props.name} type={this.props.type}></input>
       </label>
     )
@@ -24,4 +24,6 @@ export default class InputField extends Component {
 
 InputField.propTypes = {
   type: PropTypes.string.isRequired
+, label: PropTypes.string
+, name: PropTypes.string
 }
