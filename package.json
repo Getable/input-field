@@ -7,7 +7,7 @@
     "email": "cjstumph@gmail.com",
     "url": "christopherstumph.me"
   },
-  "repository": "cstumph/getable-input-field",
+  "repository": "Getable/input-field",
   "license": "Artistic 2.0",
   "directories": {
     "test": "test"
