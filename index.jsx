@@ -14,6 +14,14 @@ export default class InputField extends Component {
 
   render () {
     const inputProps = omit(this.props, 'label')
+
+    // force iOS to use the numeric keyboard if the type is number
+    // http://danielfriesen.name/blog/2013/09/19/input-type-number-and-ios-numeric-keypad/
+    if (inputProps.type === 'number') {
+      inputProps.inputmode = 'numeric'
+      inputProps.pattern = '[0-9]*'
+    }
+
     //todo: setup a classNames for each input type.
     //let typeClass = this.props.typeClass || ''
     return (
