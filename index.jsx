@@ -2,7 +2,7 @@ import React, {PropTypes, Component} from 'react'
 import {addons} from 'react/addons'
 import omit from 'lodash/object/omit'
 // we can't use destructring becuase there's a babel bug https://github.com/babel/babel/issues/1509
-const shouldComponentUpdate = addons.PureRenderMixin.shouldComponentUpdate
+const {shouldComponentUpdate} = addons.PureRenderMixin
 const namespace = 'input'
 
 export default class InputField extends Component {
