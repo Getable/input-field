@@ -1,5 +1,11 @@
 # Changelog
 
+## v2.1.0 | 2015-05-20
+* add: force numeric keyboard for type=number
+* add: package.json now has “style”
+* fix: babel fixed it’s destructuring bug
+* internal: bump deps
+
 ## v2.0.4 | 2015-05-12
 * internal: Ensure babel is updated
 * fix: work around for a babel bug
@@ -28,6 +34,7 @@ inital version
 
 ### 0.0.0
 Init
+
 
 
 
