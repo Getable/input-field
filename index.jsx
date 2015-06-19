@@ -12,6 +12,29 @@ export default class InputField extends Component {
     return shouldComponentUpdate.apply(this, args)
   }
 
+  constructor (props) {
+    super()
+
+    this.state = {
+      focused: props.focused || false
+    }
+  }
+
+  onFocus (e){
+    this.setState({focused: true})
+  }
+
+  onBlur (e){
+    this.setState({focused: false})
+  }
+
+  getFocusClass (){
+    if (this.state.focused){
+      return ' focused'
+    }
+    else {return ''}
+  }
+
   render () {
     const inputProps = omit(this.props, 'label')
 
@@ -25,9 +48,15 @@ export default class InputField extends Component {
     //todo: setup a classNames for each input type.
     //let typeClass = this.props.typeClass || ''
     return (
-      <label className={namespace}>
-        <span className={`${namespace}-label`}>{this.props.label}</span>
-        <input {...inputProps} />
+      <label className={namespace+this.getFocusClass()} ref='container'>
+        <span className={`${namespace}-label`} ref='label'>
+          {this.props.label}
+        </span>
+        <input {...inputProps}
+          ref='input'
+          onFocus={this.onFocus.bind(this)}
+          onBlur={this.onBlur.bind(this)}
+        />
       </label>
     )
   }
