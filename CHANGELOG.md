@@ -1,5 +1,12 @@
 # Changelog
 
+## v2.1.1 | 2015-06-19
+* I may have spoken with the wrong inflection but I assure you I am local and authorized to enter this here establishment.
+* these things shouldn't be here because reasons even though people will do it wrong later.
+* Speak the password for entry
+* listing style errors -_-
+* The the container element aware that it's input is focused for styling purposes.
+
 ## v2.1.0 | 2015-05-20
 * add: force numeric keyboard for type=number
 * add: package.json now has “style”
@@ -34,6 +41,7 @@ inital version
 
 ### 0.0.0
 Init
+
 
 
 
