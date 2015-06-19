@@ -13,4 +13,4 @@ notifications:
 sudo: false
 
 before_install:
- - "npm install -g npm@latest”
+ - "npm install -g npm@latest"
