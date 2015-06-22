@@ -21,10 +21,12 @@ export default class InputField extends Component {
   }
 
   onFocus (){
+    this.props.onInputFocus()
     this.setState({focused: true})
   }
 
   onBlur (){
+    this.props.onInputBlur()
     this.setState({focused: false})
   }
 
@@ -65,4 +67,11 @@ InputField.propTypes = {
   type: PropTypes.string.isRequired
   , label: PropTypes.string
   , name: PropTypes.string
+  , onInputFocus: PropTypes.func
+  , onInputBlur: PropTypes.func
+}
+
+InputField.defaultProps = {
+  onInputFocus: function(){}
+, onInputBlur: function(){}
 }
