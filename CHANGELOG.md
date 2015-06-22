@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.1.3 | 2015-06-22
+* add focus/blue function prop support
+* Bump version manually since release script is failing.
+
 ## v2.1.1 | 2015-06-19
 * I may have spoken with the wrong inflection but I assure you I am local and authorized to enter this here establishment.
 * these things shouldn't be here because reasons even though people will do it wrong later.
@@ -41,6 +45,7 @@ inital version
 
 ### 0.0.0
 Init
+
 
 
 

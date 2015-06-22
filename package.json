@@ -1,5 +1,5 @@
 {
-  "version": "2.1.2",
+  "version": "2.1.3",
   "name": "@getable/input-field",
   "description": "A simple input field written with react that includes styling for errors/validation.",
   "author": {
